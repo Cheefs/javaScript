@@ -37,7 +37,7 @@ const renderGoodsItem = (photo ='no photo', name = 'no title', price = 'sold') =
 };
 
 const renderGoodsList = (list) => {
-    let goodsList = list.map(item => renderGoodsItem(item.photo, item.name, item.price));
+    const goodsList = list.map(item => renderGoodsItem(item.photo, item.name, item.price));
     // Проблема была в данной строке, мы передавали в Inner Html массив в котором лежат наши Div элементы,
     // Поэтому все содержимое массива вывелось как одна большая строка, и вывелось на экран  товар1,товар2 
     document.querySelector('.product-block').innerHTML = goodsList.join('');
