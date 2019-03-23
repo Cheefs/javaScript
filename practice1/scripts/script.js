@@ -45,7 +45,7 @@ const renderGoodsList = (list) => {
 
 renderGoodsList(products);
 
-let $cart = document.querySelector('.cart__button');
+const $cart = document.querySelector('.cart__button');
 
 $cart.addEventListener('click', e => {
     const $cartItems = document.querySelector('.cart-items');
