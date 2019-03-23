@@ -48,7 +48,7 @@ renderGoodsList(products);
 let $cart = document.querySelector('.cart__button');
 
 $cart.addEventListener('click', e => {
-    let $cartItems = document.querySelector('.cart-items');
+    const $cartItems = document.querySelector('.cart-items');
     e.preventDefault();
     $cartItems.classList.toggle('active');
 });
