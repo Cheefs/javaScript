@@ -27,7 +27,7 @@ class Hamburger {
     this.price = 0;
     this.listToppings = [];
 
-    if(this.size === SIZE_SMALL) {
+    if (this.size === SIZE_SMALL) {
       this.price += 50;
       this.calories += 20;
     } else {
@@ -60,7 +60,7 @@ class Hamburger {
   }  
 
   removeTopping(topping) {
-    if(this.listToppings.length > 0 ) {
+    if (this.listToppings.length > 0 ) {
       for (var i = 0; i<this.listToppings.length; i++) {
         if (listToppings[i] === topping ) {
           if (listToppings[i] === TOPPING_TRIMMINGS) {
@@ -80,16 +80,14 @@ class Hamburger {
     return this.listToppings;
   }
 
-  calculatePrice() {
+  getPrice() {
     return this.price;
   }     
 
-  calculateCalories() { 
+  getCalories() { 
     return this.calories;
   } 
 }
-
-
 
 const hamburger = new Hamburger(SIZE_SMALL, SUFFING_CHEASE);
 const listToppings = hamburger.getToppings();
@@ -97,5 +95,5 @@ const listToppings = hamburger.getToppings();
   hamburger.addTopping(TOPPING_MAYO);
   hamburger.addTopping(TOPPING_MAYO);
   hamburger.removeTopping(TOPPING_MAYO);
-console.log(hamburger.calculatePrice());
-console.log(hamburger.calculateCalories());
+console.log(hamburger.getPrice());
+console.log(hamburger.getCalories());

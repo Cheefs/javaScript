@@ -176,11 +176,10 @@ class ProductsList {
     }
 }
 
-    const products = new ProductsList();
-
-    products.fetchItems();
-    document.querySelector('.product-block').innerHTML = products.render();
-    products.totalPrice()
+const products = new ProductsList();
+products.fetchItems();
+document.querySelector('.product-block').innerHTML = products.render();
+products.totalPrice()
 
 const $cart = document.querySelector('.cart__button');
 
