@@ -132,8 +132,8 @@ header {
     header .header-right .cart-items {
       display: none;
       position: absolute;
-      width: 262px;
-      height: 440px;
+      width: 280px;
+      height: 460px;
       border-radius: 5px;
       background-color: #ffffff;
       left: -33px;
@@ -189,8 +189,8 @@ header {
         top: -5px; }
       header .header-right .cart-items .top-block {
         margin: 21px 15px;
-        width: 230px;
-        height: 221px;
+        overflow: auto;
+        height: 240px;
         max-height: 500px; }
         header .header-right .cart-items .top-block .in-cart-item {
           width: 230px;
@@ -1305,6 +1305,9 @@ footer {
       .product-container .product .buttons .product-btn:hover {
         background-color: #ffffff59;
         transform: scale(1.2); }
+      .product-container .product .buttons .product-btn:active {
+        transform: scale(1);
+        border-color: #e3455afc; }
       .product-container .product .buttons .add-to-cart {
         color: white;
         display: flex;
@@ -1313,7 +1316,7 @@ footer {
         align-items: center;
         border-radius: 3px;
         border: 1px solid #ffffff;
-        transition: 0.6s; }
+        transition: 0.3s; }
         .product-container .product .buttons .add-to-cart .cart {
           margin-left: 12px;
           margin-right: 8px; }
@@ -1326,7 +1329,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: 0.6s; }
+        transition: 0.3s; }
         .product-container .product .buttons .small-btn img {
           margin-left: 12px;
           margin-right: 8px; }
