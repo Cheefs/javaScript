@@ -453,9 +453,13 @@
       flex-wrap: wrap
       justify-content: space-between
 
-      .product-btn:hover
-        background-color: #ffffff59
-        transform: scale(1.2)
+      .product-btn
+        &:hover
+          background-color: #ffffff59
+          transform: scale(1.2)
+        &:active
+          transform: scale(1)
+          border-color: $colorPink-hover
 
       .add-to-cart
         color: white
@@ -465,8 +469,7 @@
         align-items: center
         border-radius: 3px
         border: 1px solid #ffffff
-        transition: 0.6s
-
+        transition: 0.3s
         .cart
           margin-left: 12px
           margin-right: 8px
@@ -480,7 +483,7 @@
         display: flex
         align-items: center
         justify-content: center
-        transition: 0.6s
+        transition: 0.3s
 
         img
           margin-left: 12px
