@@ -231,7 +231,7 @@ $cart.addEventListener('click', e => {
 });
 
 const $products = document.querySelector('.product-block');
-$products.addEventListener("click", (e) => {
+$products.addEventListener('click', (e) => {
     e.preventDefault();
     if (e.target.parentElement.classList.contains('add-to-cart') || e.target.classList.contains('add-to-cart')) {
         let $productData = e.target.parentElement.parentElement;
