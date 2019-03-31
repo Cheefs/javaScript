@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.input__block{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.has_success {
+    color: green
+}
+.input__block.has_success .input {
+    border-color: green
+}
+.input__block.has_error .input {
+    border-color: red
+}
+
+.has_error {
+    color: red
+}
+
+.hide {
+    display: none;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button {
+    margin:10px;
+}
+
+.help-block {
+    color: red
+}
