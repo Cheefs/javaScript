@@ -76,6 +76,7 @@ const app = new Vue({
                         },
                         body: JSON.stringify({ count: e.count }),
                     });
+                    this.getCartInfo();
                     exists = true;
                 } 
             });
@@ -88,6 +89,7 @@ const app = new Vue({
                     },
                     body: JSON.stringify({id: id, name: name, photo: photo, price: price, count: 1 }),
                     }).then(() => this.fetchCartItems());
+                    this.getCartInfo();
             } 
         },
         hendlerRemoveFromCartClick(e) {
