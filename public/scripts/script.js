@@ -182,7 +182,7 @@ Vue.component('products', {
     mounted() {
       fetch(`${API_URL}/products`)
         .then(response => {
-            if (!response.ok) {
+            if (response.ok) {
                 response.json().then((items) => {
                     this.items = items;
                 });
