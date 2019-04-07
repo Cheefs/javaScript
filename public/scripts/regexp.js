@@ -10,7 +10,7 @@
         e.  Если одно из полей не прошло валидацию, необходимо выделить это поле красной рамкой и сообщить пользователю об ошибке. 
 */
 
-const str = `Lorem, ipsum dolor sit 'amet consectetur' adipisicing elit. Iure velit accusantium quas. 
+const str = `Lorem, ipsum dolor sit:'amet consectetur' adipisicing elit. Iure velit accusantium quas. 
             Magni laboriosam 'aliquid' eligendi iure id labore 'fugit', modi officiis autem eum corrupti, maiores beatae veritatis at, 
             in soluta? Sequi don't explicabo 'voluptates nam fuga animi'. N'isi num'quam fugiat recusandae minima, repudiandae iusto odio voluptates. 
             Laboriosam aren't 'quaerat' repudiandae ipsa?`;
