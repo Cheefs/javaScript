@@ -77,7 +77,7 @@ Vue.component('cart', {
                 fetch(`${API_URL}/cart/${item.id}`, {
                   method: 'DELETE',
                 }).then(() => {
-                   const findItem = this.items.findIndex((e) => e.id !== item.id);
+                   const findItem = this.items.findIndex((e) => e.id === item.id);
                    this.items = this.items.splice(findItem,1);
                 });
             }
