@@ -11,13 +11,14 @@
 </head>
 <body>
     <div id="app">
+        <error :error="hasError"></error>
         <header>
             <div class="container header-flex">
                 <div class="header-left">
                     <a class ="logo" href="index.html"><img src="images/logo.png" alt="logo">
                         <div class="brand-name">bran<span>d</span></div>
                     </a>
-                    <form class="header-form" action="#">
+                    <div class="header-form">
                         <div class="select" >
                             <div class="browse-container">
                                 <a href="product.html" class="browse">
@@ -51,20 +52,25 @@
                                     </div>
                                 </nav>
                             </div>
-                            <input type="text" id='searchInput' v-model="searchQuery" placeholder="Search for Item...">
+                          
+                            <search :query="filterValue" @onsearch="handleSearchClick "></search>
+                            <!-- <input type="text" id='searchInput' v-model="searchQuery" placeholder="Search for Item...">
                             <a href="#" @click="handleSearchClick" class="find-btn">
                                 <i class="fas fa-search"></i>
-                            </a>
+                            </a> -->
+
+
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="header-right">
-                    <div class="cart-btn-block">
-                            <a @click="handlerCartClick" href="cart.html">
+                    <cart :items="cartItems" @onclick.prevent="handlerCartClick"></cart>
+                    <!-- <div @click.prevent="handlerCartClick" class="cart-btn-block">
+                            <a  href="cart.html">
                                 <img class="cart-image" src="images/cart.svg" alt="cart">
-                                <span class="cart-items-total">{{ cartTotal }}</span>
-                            </a>
-                        <div v-if="isVisibleCart" class="cart-items">
+                                <span class="cart-items-total">{{ cartItemsCount }}</span>
+                            </a> -->
+                        <!-- <div v-if="isVisibleCart" class="cart-items">
                             <div class="top-block">
 
                             <a v-for="item in cartItems" href="single-page.html" class="in-cart-item">
@@ -83,7 +89,7 @@
                                         </span>
                                         <h3>{{ item.count }} x {{ item.currency }} {{ item.price }} </h3>
                                     </div>
-                                    <div @click="hendlerRemoveFromCartClick" class="btn-remove-item">
+                                    <div @click.prevent="handleDeleteClick(item)" class="btn-remove-item">
                                         <i class="fas fa-times-circle btn_remove" :data-id="item.id"></i>
                                     </div>
                                 </div>
@@ -98,9 +104,9 @@
                                 <a href="checkout.html" class="cart-btn btn-check-out">Checkout</a>
                                 <a href="cart.html" class="cart-btn btn-to-cart">Go to cart</a>
                             </div>
-                        </div>
+                        </div> -->
                     
-                    </div>
+                    <!-- </div> -->
                     <a href="#" class="my-account-btn">My Account</a>
                 </div>
         </header>
@@ -586,18 +592,20 @@
                     </div>
                 </div>
                     <!-- Vue js rendering -->
-                <div class="product-block">
-                    <p v-if="!filteredItems.length">Товары по ващему запросу отсутствуют</p>
-                    <div v-for="item in filteredItems" class="product" :data-id="item.id">
+                    <products :query="filterValue" @onbuy="handlerBuyClick"></products>
+                <!-- <div class="product-block">
+                    <p v-if="!filteredItems.length">Товары по ващему запросу отсутствуют</p> -->
+
+                    <!-- <div v-for="item in filteredItems" class="product" :data-id="item.id">
                         <a href="single-page.html" class="photo-link">
                             <div class="photo">
                                 <img class="item_photo" :src="item.photo" alt="">
                             </div>
                         </a>
                         <div class="buttons">
-                            <a  href="#" class="product-btn add-to-cart" :data-id="item.id">
+                            <a  @onbuy.prevent="handleBuyClick" href="#" class="product-btn add-to-cart" :data-id="item.id">
                                 <img class="cart" src="images/cart-item.svg" alt="cart"> 
-                                <span @click="hendlerAddToCartClick" >Add to Cart</span>
+                                <span>Add to Cart</span>
                             </a>
                             <a href="#" class="product-btn small-btn">
                                 <img src="images/compare.svg" alt="compare">
@@ -607,17 +615,17 @@
                             </a>
                         </div>
                         <div class="text">
-                            <div class="name">{{item.name}}</div>
+                            <div class="name">{{ item.name }}</div>
                             <div class="price">
-                                <span class="currency">{{item.currency}}</span> 
-                                <span class="price_value">{{item.price}}</span>
+                                <span class="currency">{{ item.currency }}</span> 
+                                <span class="price_value">{{ item.price }}</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+<!--     
+                </div> -->
     
-                </div>
-    
-                <div v-if="filteredItems.length" class="bottom">
+                <div class="bottom">
                     <div class="pages-block">
                         <a class="pages-block-a" href="#"><i class="fas fa-angle-left"></i></a>
                         <a class="pages-block-a active" href="#">1</a>

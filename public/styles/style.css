@@ -45,6 +45,19 @@
   margin: 0;
   padding: 0; }
 
+.error__block {
+  position: absolute;
+  top: 25%;
+  left: 27%;
+}
+.search__block {
+  height: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 input, button {
   outline: none; }
 
@@ -263,7 +276,7 @@ header {
       header .header-left .header-form .select {
         border-radius: 3px;
         height: 100%;
-        width: 403px;
+        /* width: 403px; */
         display: flex;
         align-items: center;
         margin-left: 37px;
