@@ -78,7 +78,7 @@ Vue.component('cart', {
                   method: 'DELETE',
                 }).then(() => {
                    const findItem = this.items.findIndex((e) => e.id === item.id);
-                   this.items = this.items.splice(findItem,1);
+                   this.items = this.items.splice(findItem, 1);
                 });
             }
         },
